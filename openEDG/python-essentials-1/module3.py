@@ -70,3 +70,13 @@ for t in range(3):
     for f in range(15):
         print("Floor", f, "\n")
         print("\t", rooms[t][f])
+
+"""
+List comprehension:
+[expression for element in list if condition]
+
+Loop equivalent:
+for element in list:
+    if condition:
+        expression
+"""
