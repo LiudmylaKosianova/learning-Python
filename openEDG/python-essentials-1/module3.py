@@ -47,3 +47,26 @@ del newBlueBells[1:3]
 print(newBlueBells)
 print(21 in newBlueBells)
 print(21 not in newBlueBells)
+
+print("\n*** List comprehension ***\n")
+squares = [x**2 for x in range(10)]
+print(squares)
+evens = [x for x in squares if x % 2 == 0]
+print(evens)
+
+#2D list: temperature measurements: every hour every day
+temps = [ [0.0 for h in range(24)] for d in range(31)]
+
+for d in range(31):
+    print(temps[d])
+
+#3D list: a hotel consists of 3 building, 15 floors each.
+#         There are 20 rooms on each floor. Info is the room occupied/free
+
+rooms = [[[False for r in range(20)]for f in range(15)]for t in range(3)]
+
+for t in range(3):
+    print("Tower", t, "\n")
+    for f in range(15):
+        print("Floor", f, "\n")
+        print("\t", rooms[t][f])
