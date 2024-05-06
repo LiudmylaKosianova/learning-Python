@@ -32,3 +32,18 @@ while flag:
 print("Sorted with Bubble sort")
 print(list1)
 #list.sort()
+
+print("\n*** slice ***\n")
+blueBells = [1, 21, 5, 14, 10]
+print(blueBells, " blueBells")
+#newBlueBells = blueBells[1:-1]
+#newBlueBells = blueBells[:-1]
+#newBlueBells = blueBells[1:]
+newBlueBells = blueBells[:]
+print(newBlueBells, " newBlueBells")
+#del newBlueBells
+del newBlueBells[1:3]
+#del newBlueBells[:]
+print(newBlueBells)
+print(21 in newBlueBells)
+print(21 not in newBlueBells)
