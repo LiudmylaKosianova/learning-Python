@@ -73,5 +73,24 @@ print(day_of_year(2000, 12, 31))
 print(day_of_year(2024,12,31))
 print(day_of_year(2023, 12,31))
 
+"""
+Prime or not
+"""
+def is_prime(num):
+	if num==1 or num==2:
+		return True
+	for i in range(2,num):
+		if num%i==0:
+			return False
+	return True
+ 
+print("Prime numbers: ", end=" ")
+for i in range(1, 20):
+	
+	if is_prime(i + 1):
+			print(i + 1, end=" ")
+print()
+ 
+
 
 
