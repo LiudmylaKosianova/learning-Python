@@ -62,14 +62,16 @@ Returns corresponding day of the year
 def day_of_year(year, month, day):
 	if (year<=0) or (month not in range(1,13)) or (day not in range(1,32)):
 		return None
-	day=0
+	dayN=0
 	
-	for i in range(1,month):
-		day += days_in_month(year,i)
-	day += day
-	return day
+	for i in range(1,month):		 
+		dayN += days_in_month(year,i)
+	dayN += day
+	return dayN
 	
 print(day_of_year(2000, 12, 31))
+print(day_of_year(2024,12,31))
+print(day_of_year(2023, 12,31))
 
 
 
