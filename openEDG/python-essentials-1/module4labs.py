@@ -53,4 +53,23 @@ for i in range(len(test_years)):
 		print("OK")
 	else:
 		print("Failed")
+		
+"""
+Leap year, months and days
+Returns corresponding day of the year
+"""
+ 
+def day_of_year(year, month, day):
+	if (year<=0) or (month not in range(1,13)) or (day not in range(1,32)):
+		return None
+	day=0
+	
+	for i in range(1,month):
+		day += days_in_month(year,i)
+	day += day
+	return day
+	
+print(day_of_year(2000, 12, 31))
+
+
 
