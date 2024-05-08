@@ -9,3 +9,10 @@ def fruits(nApples, nPlums, nCherries):
 fruits(2, 5, 7) #positional arguments
 fruits(nCherries=2, nApples=5, nPlums=7) #keyword arguments
 fruits(2, nCherries=0, nPlums=7) #mix positional and keyword.Positional should go first
+
+def colours(cOne, cTwo="red"): #pre-defined argument
+    print("Colour one is:", cOne)
+    print("Colour two is:", cTwo)
+
+colours("blue")
+colours("blue", "pink")
