@@ -26,3 +26,8 @@ def oddFunction(n): # when the even number passed, it will return None
     
 print(oddFunction(9))
 print(oddFunction(10))
+
+def listFunction(n):
+    print(len(n))
+
+listFunction([1,2,77])
