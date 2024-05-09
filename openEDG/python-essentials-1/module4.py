@@ -31,3 +31,18 @@ def listFunction(n):
     print(len(n))
 
 listFunction([1,2,77])
+
+# interesting use of "\"
+
+def bmi(weight, height):
+    if height < 1.0 or height > 2.5 or \
+       weight < 20  or weight > 200:
+        return None
+
+    return weight / height ** 2
+
+
+print(bmi(352.5, 1.65))
+
+isItOrdered = {1:"red", 2:"pink", 3:"white", 4:"black"}
+print(isItOrdered)
