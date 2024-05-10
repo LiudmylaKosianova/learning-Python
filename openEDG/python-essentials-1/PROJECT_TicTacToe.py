@@ -41,10 +41,26 @@ def display_board(board):
         print()
     print()
 
+def get_indices(number):
+    """
+    returns a tuple, that represent the location on the board
+    """
+    ind_list = []
+    for x in range(3):
+        for y in range(3):
+            ind_list.append((x,y))
+    
+    return ind_list[number-1]
 
-# def enter_move(board):
-#     # The function accepts the board's current status, asks the user about their move, 
-#     # checks the input, and updates the board according to the user's decision.
+def enter_move(board):
+    # The function accepts the board's current status, asks the user about their move, 
+    # checks the input, and updates the board according to the user's decision.
+    move = input("Enter your move:")
+    if int(move)<=9 and int(move)>=1:
+        x, y = get_indices(int(move))
+        if board[x][y] != "0" and board[x][y] != "X":
+            board[x][y] = "0"
+
 
 
 # def make_list_of_free_fields(board):
