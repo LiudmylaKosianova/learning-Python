@@ -1,6 +1,10 @@
 def display_board(board):
-    # The function accepts one parameter containing the board's current status
-    # and prints it out to the console.
+     
+    """
+    The function accepts one parameter containing the board's current status
+    and prints it out to the console.
+    """
+    #create the zero's two dimensional list for printing
     listBoard = [[0 for _ in range(25)] for _ in range(13)]
     for x in range(13):
         for y in range(25):
@@ -14,11 +18,28 @@ def display_board(board):
                     listBoard[x][y] = "|"
                 else:
                     listBoard[x][y] = " "
-    numbers = [i for i in range(1,10)]
+    # flatten the board two dimensional list into one dimensional moves list
+    moves = []
+    for i in board:
+        for j in i:
+            moves.append(j)
+        
+    # put the moves in the board for printing
+    x_s = [2,6,10]
+    y_s = [4,12,20]
+    index_moves = 0
+    for x in x_s:
+        for y in y_s:
+            listBoard[x][y] = moves[index_moves]
+            index_moves+=1
+    
+    # finally prints the board 
+    print("\n*** CURRENT BOARD STATE ***\n")
     for x in range(13):
         for y in range(25):
             print(listBoard[x][y], end="")
         print()
+    print()
 
 
 # def enter_move(board):
