@@ -61,11 +61,16 @@ def enter_move(board):
         if board[x][y] != "0" and board[x][y] != "X":
             board[x][y] = "0"
 
+def make_list_of_free_fields(board):
+    # The function browses the board and builds a list of all the free squares; 
+    # the list consists of tuples, while each tuple is a pair of row and column numbers.
+    free = []
+    for x in range(3):
+        for y in range(3):
+            if board[x][y] != "X" and board[x][y] != "0":
+                free.append((x,y))
+    return free
 
-
-# def make_list_of_free_fields(board):
-#     # The function browses the board and builds a list of all the free squares; 
-#     # the list consists of tuples, while each tuple is a pair of row and column numbers.
 
 
 # def victory_for(board, sign):
