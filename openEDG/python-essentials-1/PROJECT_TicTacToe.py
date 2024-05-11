@@ -1,5 +1,7 @@
+from random import randrange
+
 def display_board(board):
-     
+
     """
     The function accepts one parameter containing the board's current status
     and prints it out to the console.
@@ -121,7 +123,13 @@ def victory_for(board, sign):
 
     return victory
 
+def draw_move(board):
+    """
+    The function draws the computer's move and updates the board.
+    """
+    free = make_list_of_free_fields(board)
+    
+    move = randrange(0, len(free))
+    x,y = free[move]
+    board[x][y] = "X"
 
-
-# def draw_move(board):
-#     # The function draws the computer's move and updates the board.
