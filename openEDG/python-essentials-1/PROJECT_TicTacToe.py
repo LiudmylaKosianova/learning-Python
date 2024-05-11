@@ -90,6 +90,8 @@ def victory_for(board, sign):
             if y!=sign:
                 victory = False
                 break
+        if victory:
+            return victory
 
     #check for victory in vertical lines(columns)
     for y in range(3):
@@ -98,6 +100,8 @@ def victory_for(board, sign):
             if board[x][y] != sign:
                 victory = False
                 break
+        if victory:
+            return victory
     
     if sign == "X":
         victory = True
@@ -105,11 +109,15 @@ def victory_for(board, sign):
             if board[x][y] != "X":
                 victory = False
                 break
+        if victory:
+            return victory
+        victory = True
         for x, y in zip(range(3),range(2, -1, -1)):
             if board[x][y] != "X":
                 victory = False
                 break
-
+        if victory:
+            return victory
 
     return victory
 
