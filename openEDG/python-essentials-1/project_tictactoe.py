@@ -7,14 +7,26 @@ from PROJECT_TicTacToe import make_list_of_free_fields
 from random import randrange
 
 board = [["1", "2", "3"], ["4", "X", "6"], ["7", "8", "9"]]
-draw_move(board)
-display_board(board)
-draw_move(board)
-display_board(board)
-draw_move(board)
-display_board(board)
-draw_move(board)
-display_board(board)
+
+while True:
+    display_board(board)
+    enter_move(board)
+    if victory_for(board, "0"):
+        print("You have won!")
+        break
+    draw_move(board)
+    if victory_for(board, "X"):
+        print("Computer has won!")
+        break
+    
+# draw_move(board)
+# display_board(board)
+# draw_move(board)
+# display_board(board)
+# draw_move(board)
+# display_board(board)
+# draw_move(board)
+# display_board(board)
 # enter_move(board)
 # display_board(board)
 # board_x0 = [["X", "X", "X"], ["4", "X", "6"], ["7", "8", "9"]]
