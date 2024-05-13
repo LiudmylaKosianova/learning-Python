@@ -9,3 +9,4 @@ print(math.sin(math.pi/2))
 def sin(x):
     print("This is handmade sin function")
 sin(1)
+print(dir(math))
