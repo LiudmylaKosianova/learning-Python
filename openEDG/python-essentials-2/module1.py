@@ -10,14 +10,20 @@ import math
 #     print("This is handmade sin function")
 # sin(1)
 # print(dir(math))
-from platform import platform
-from platform import processor
-from platform import system
+# from platform import platform
+# from platform import processor
+# from platform import system
 
-print(platform())
-print(platform(1))
-print(platform(0, 1))
-print(processor())
-print(system())
+# print(platform())
+# print(platform(1))
+# print(platform(0, 1))
+# print(processor())
+# print(system())
+
+import sys
+
+for p in sys.path:
+    print(p)
+
 
 
