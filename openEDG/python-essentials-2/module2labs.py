@@ -46,11 +46,18 @@ def ledDisplay(a):
     for lst in (n0, n1, n2, n3, n4, n5, n6, n7, n8, n9):
         ledN.append(lst)
 
-    listInputDigits = []
-    for char in a:
-        number = int(char)
-        listInputDigits.append(number) 
- 
+    # listInputDigits = []
+    # for char in a:
+    #     number = int(char)
+    #     listInputDigits.append(number) 
     
+    line = 0
+    while line < 5:
+        for char in a:
+            digit = int(char)
+            print(ledN[digit][line]," ", end="")
+        line += 1
+        print("")
 
-ledDisplay(ledInputCheck())
+
+#ledDisplay(ledInputCheck())
