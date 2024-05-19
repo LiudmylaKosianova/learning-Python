@@ -13,6 +13,10 @@ def test_mysplit():
 def test_ledInputCheck(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _:"-7")
     assert ledInputCheck() == -1
-    
+    monkeypatch.setattr('builtins.input', lambda _:"abc")
+    assert ledInputCheck() == -1
+    monkeypatch.setattr('builtins.input', lambda _:"975")
+    assert ledInputCheck() == "975"
+
 
 
