@@ -19,7 +19,19 @@ def mysplit(strng):
       
     return mylist
 
+def ledInputCheck():
+    digits = input("Enter a positive integer to display: ")
+    if not digits.isdigit():
+        print("Wrong input!")
+        return -1
+    digitsInt = int(digits)
+    if digitsInt < 0:
+        print("Wrong input!")
+        return -1
+    return digits
+
 def ledDisplay(a):
+    if a == -1: return
     n0 = ["###", "# #", "# #", "# #", "###"]
     n1 = ["  #", "  #", "  #", "  #", "  #"]
     n2 = ["###", "  #", "###", "#  ", "###"]
@@ -29,5 +41,16 @@ def ledDisplay(a):
     n6 = ["###", "#  ", "###", "# #", "###"]
     n7 = ["###", "  #", "  #", "  #", "  #"]
     n8 = ["###", "###", "###", "###", "###"]
-    n9 = ["###", "# #", "###", "  #", "  #"]
+    n9 = ["###", "# #", "###", "  #", "###"]
+    ledN = []
+    for lst in (n0, n1, n2, n3, n4, n5, n6, n7, n8, n9):
+        ledN.append(lst)
+
+    listInputDigits = []
+    for char in a:
+        number = int(char)
+        listInputDigits.append(number) 
+ 
     
+
+ledDisplay(ledInputCheck())
