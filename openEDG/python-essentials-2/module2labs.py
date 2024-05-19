@@ -19,9 +19,15 @@ def mysplit(strng):
       
     return mylist
 
-
-print(mysplit("To be or not to be, that is the question"))
-print(mysplit("To be or not to be,that is the question"))
-print(mysplit("   "))
-print(mysplit(" abc "))
-print(mysplit(""))
+def ledDisplay(a):
+    n0 = ["###", "# #", "# #", "# #", "###"]
+    n1 = ["  #", "  #", "  #", "  #", "  #"]
+    n2 = ["###", "  #", "###", "#  ", "###"]
+    n3 = ["###", "  #", "###", "  #", "###"]
+    n4 = ["# #", "# #", "###", "  #", "  #"]
+    n5 = ["###", "#  ", "###", "  #", "###"]
+    n6 = ["###", "#  ", "###", "# #", "###"]
+    n7 = ["###", "  #", "  #", "  #", "  #"]
+    n8 = ["###", "###", "###", "###", "###"]
+    n9 = ["###", "# #", "###", "  #", "  #"]
+    
