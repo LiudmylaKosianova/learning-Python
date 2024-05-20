@@ -165,9 +165,45 @@ def paliOrNot2(line):
         lineReversed += line[i]
     return line == lineReversed
 
-              
+"""
+Scenario
+An anagram is a new word formed by rearranging the letters of a word, 
+using all the original letters exactly once. For example, 
+the phrases "rail safety" and "fairy tales" are anagrams, 
+while "I am" and "You are" are not.
 
+Your task is to write a program which:
 
+asks the user for two separate texts;
+checks whether, the entered texts are anagrams and prints the result.
+Note:
+
+assume that two empty strings are not anagrams;
+treat upper- and lower-case letters as equal;
+spaces are not taken into account during the check - treat them as non-existent
+
+"""
+def createDi(line):
+    line = line.replace(' ','')
+    line = line.lower()
+    di = {}
+    for char in line:
+        if char not in di:
+            di[char] = 1
+        else:
+            di[char] +=1
+    return di
+
+def anagrams(line1, line2):
+    
+    di1 = createDi(line1)
+    di2 = createDi(line2)
+    if not di1 or not di2:
+        return False
+    else:
+        return di1 == di2
+
+ 
 
 #caesarCypher("The die is cast", 25)
 #caesarCypherInput("Hello")

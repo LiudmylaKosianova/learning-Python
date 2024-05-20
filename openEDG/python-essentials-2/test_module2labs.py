@@ -7,6 +7,7 @@ from module2labs import caesarCypher
 from module2labs import paliInput
 from module2labs import paliOrNot
 from module2labs import paliOrNot2
+from module2labs import anagrams
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -67,5 +68,13 @@ def test_paliOrNot():
 def test_paliOrNot2():
     assert paliOrNot2("tenanimalsislaminanet") == True
     assert paliOrNot2("aabbbc") == False
+
+@pytest.mark.an  
+def test_anagrams():
+    assert anagrams("I am", "You are") == False
+    assert anagrams("rail safety", "fairy tales") == True
+    assert anagrams("Rail saFety", "fAiry Tales") == True
+    assert anagrams("   ", " banana") == False
+    assert anagrams(" ", " ") == False
 
 
