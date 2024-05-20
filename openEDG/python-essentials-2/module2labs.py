@@ -76,4 +76,30 @@ Your task is to write a program which:
       you should force the user to enter a valid shift value 
       (don't give up and don't let bad data fool you!)
     - prints out the encoded text.
+
+    Test data
+Sample input:
+
+abcxyzABCxyz 123
+2
+
+Sample output:
+
+cdezabCDEzab 123
+
+Sample input:
+
+The die is cast
+25
+
+Sample output:
+
+Sgd chd hr bzrs
 """
+def ceasarInputLine():
+    line = input("Enter the line: ")
+    lineCheck = line.replace(' ','')
+    if (len(lineCheck) == 0) or (not lineCheck.isalpha):
+        print("I can't cypher this line.")
+        return -1
+    return line
