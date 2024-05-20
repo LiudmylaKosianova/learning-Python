@@ -116,5 +116,6 @@ def caesarCypherInput(a):
             print("This is not an integer number")
             mistake = True
     print(f"Thank you, I will take the cypher \"{cypherInt}\" and incrypt \"{a}\"")
+    return cypherInt
 
 #caesarCypherInput("Hello")
