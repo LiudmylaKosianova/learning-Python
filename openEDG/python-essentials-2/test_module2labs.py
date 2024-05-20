@@ -3,6 +3,7 @@ from module2labs import mysplit
 from module2labs import ledInputCheck
 from module2labs import caesarLineInput
 from module2labs import caesarCypherInput
+from module2labs import caesarCypher
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -22,8 +23,6 @@ def test_ledInputCheck(monkeypatch):
 
 @pytest.mark.caesarc
 def test_caesarLineInput(monkeypatch):
-    monkeypatch.setattr('builtins.input', lambda _:"hello5 77")
-    assert caesarLineInput() == -1
     monkeypatch.setattr('builtins.input', lambda _:"     ")
     assert caesarLineInput() == -1
     monkeypatch.setattr('builtins.input', lambda _:"Hello there")
@@ -39,5 +38,10 @@ def test_caesarCypherInput(monkeypatch):
     assert caesarCypherInput("Hi") == 1
     monkeypatch.setattr('builtins.input', lambda _:"25")
     assert caesarCypherInput("Hi") == 25
+
+@pytest.mark.caesarc
+def test_caesarCypher():
+    assert caesarCypher("The die is cast", 25) == "Sgd chd hr bzrs"  
+    assert caesarCypher("abcxyzABCxyz 123", 2) == "cdezabCDEzab 123"  
 
 

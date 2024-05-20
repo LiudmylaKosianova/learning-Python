@@ -115,7 +115,7 @@ def caesarCypherInput(line):
         except:
             print("This is not an integer number")
             mistake = True
-    print(f"Thank you, I will take the cypher \"{cypherInt}\" and incrypt \"{a}\"")
+    print(f"Thank you, I will take the cypher \"{cypherInt}\" and incrypt \"{line}\"")
     return cypherInt
 
 def caesarCypher(line, cypher):
@@ -138,7 +138,9 @@ def caesarCypher(line, cypher):
                 elementC += char
         lineListC.append(elementC)
         elementC = ""
-    print(lineListC)           
+    cc = " ".join(lineListC)
+    return cc
+             
 
 
 
