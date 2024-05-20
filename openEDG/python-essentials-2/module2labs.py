@@ -140,11 +140,20 @@ def caesarCypher(line, cypher):
         elementC = ""
     cc = " ".join(lineListC)
     return cc
-             
+
+def paliInput():
+    line = input("Enter a line: ")
+    line = line.replace(' ','')
+    if len(line)==0:
+        return -1
+    else:
+        return line  
+
+def paliOrNot(line):
+    return line
+              
 
 
 
-caesarCypher("The die is cast", 25)
-
-
+#caesarCypher("The die is cast", 25)
 #caesarCypherInput("Hello")
