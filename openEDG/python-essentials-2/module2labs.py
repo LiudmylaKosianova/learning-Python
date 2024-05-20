@@ -99,13 +99,13 @@ Sgd chd hr bzrs
 def caesarLineInput():
     line = input("Enter the line: ")
     lineCheck = line.replace(' ','')
-    if not lineCheck.isalpha() or len(lineCheck) == 0:
+    if len(lineCheck) == 0:
         print("I can't cypher this line.")
         return -1
     return line
 
-def caesarCypherInput(a):
-    if a == -1: return -1    
+def caesarCypherInput(line):
+    if line == -1: return -1    
     mistake = True
     while mistake:
         try:
@@ -117,5 +117,32 @@ def caesarCypherInput(a):
             mistake = True
     print(f"Thank you, I will take the cypher \"{cypherInt}\" and incrypt \"{a}\"")
     return cypherInt
+
+def caesarCypher(line, cypher):
+    if line == -1: return -1
+    lineList = line.split()
+    print(lineList)
+    elementC = ""
+    lineListC = []
+    for element in lineList:
+        for char in element:
+            if char.isalpha():
+                charC = ord(char) + cypher
+                if ord(char)<=90 and charC > 90:
+                    charC = 65 + (charC-91)
+                elif ord(char)<=122 and charC > 122:
+                    charC = 97 + (charC-123)
+                elementC += chr(charC)
+                #elementC += (str(charC))+"*"
+            else:
+                elementC += char
+        lineListC.append(elementC)
+        elementC = ""
+    print(lineListC)           
+
+
+
+caesarCypher("The die is cast", 25)
+
 
 #caesarCypherInput("Hello")
