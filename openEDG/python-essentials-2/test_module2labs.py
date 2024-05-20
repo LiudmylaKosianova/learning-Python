@@ -6,6 +6,7 @@ from module2labs import caesarCypherInput
 from module2labs import caesarCypher
 from module2labs import paliInput
 from module2labs import paliOrNot
+from module2labs import paliOrNot2
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -61,5 +62,10 @@ def test_paliInput(monkeypatch):
 def test_paliOrNot():
     assert paliOrNot("tenanimalsislaminanet") == True
     assert paliOrNot("aabbbc") == False
+
+@pytest.mark.pali
+def test_paliOrNot2():
+    assert paliOrNot2("tenanimalsislaminanet") == True
+    assert paliOrNot2("aabbbc") == False
 
 

@@ -159,6 +159,12 @@ def paliOrNot(line):
         print("It's not a palindrome")
         return False
     
+def paliOrNot2(line):
+    lineReversed = ""
+    for i in range(len(line)-1,-1,-1):
+        lineReversed += line[i]
+    return line == lineReversed
+
               
 
 
