@@ -96,10 +96,11 @@ Sample output:
 
 Sgd chd hr bzrs
 """
-def ceasarInputLine():
+def caesarLineInput():
     line = input("Enter the line: ")
     lineCheck = line.replace(' ','')
-    if (len(lineCheck) == 0) or (not lineCheck.isalpha):
+    if not lineCheck.isalpha() or len(lineCheck) == 0:
         print("I can't cypher this line.")
         return -1
     return line
+
