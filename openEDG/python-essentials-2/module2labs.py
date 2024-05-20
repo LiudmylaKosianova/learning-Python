@@ -104,3 +104,17 @@ def caesarLineInput():
         return -1
     return line
 
+def caesarCypherInput(a):
+    if a == -1: return -1    
+    mistake = True
+    while mistake:
+        try:
+            cypher = input("Enter the cypher number from the range 1..25: ")
+            cypherInt = int(cypher)
+            mistake = cypherInt < 1 or cypherInt > 25
+        except:
+            print("This is not an integer number")
+            mistake = True
+    print(f"Thank you, I will take the cypher \"{cypherInt}\" and incrypt \"{a}\"")
+
+#caesarCypherInput("Hello")
