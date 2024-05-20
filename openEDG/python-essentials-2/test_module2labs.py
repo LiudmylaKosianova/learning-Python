@@ -5,6 +5,7 @@ from module2labs import caesarLineInput
 from module2labs import caesarCypherInput
 from module2labs import caesarCypher
 from module2labs import paliInput
+from module2labs import paliOrNot
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -49,5 +50,16 @@ def test_caesarCypher():
 def test_paliInput(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _:"  ")
     assert paliInput() == -1
+    monkeypatch.setattr('builtins.input', lambda _:"")
+    assert paliInput() == -1
+    monkeypatch.setattr('builtins.input', lambda _:"aaa AAA")
+    assert paliInput() == "aaaaaa"
+    monkeypatch.setattr('builtins.input', lambda _:"7P P7")
+    assert paliInput() == "7pp7"
+
+@pytest.mark.pali
+def test_paliOrNot():
+    assert paliOrNot("tenanimalsislaminanet") == True
+    assert paliOrNot("aabbbc") == False
 
 

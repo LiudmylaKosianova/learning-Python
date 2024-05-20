@@ -147,10 +147,18 @@ def paliInput():
     if len(line)==0:
         return -1
     else:
-        return line  
+        return line.lower() 
 
 def paliOrNot(line):
-    return line
+    listOriginal = list(line)
+    listReversed = listOriginal[::-1]
+    if listOriginal == listReversed:
+        print("It's a palindrome")
+        return True
+    else:
+        print("It's not a palindrome")
+        return False
+    
               
 
 
