@@ -9,6 +9,7 @@ from module2labs import paliOrNot
 from module2labs import paliOrNot2
 from module2labs import anagrams
 from module2labs import digit
+from module2labs import hidden
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -85,3 +86,9 @@ def test_digit():
     assert digit("19841205") == 3
     assert digit("19880229") == 3
 
+@pytest.mark.hidden
+def test_hidden():
+    assert hidden("dog", "vcxzxduybfdsobywuefgas") == "yes"
+    assert hidden("dog", "gvcxzxduybfdsobywuefas") == "no"
+    assert hidden("donor", "nabucodonosor") == "yes"
+    assert hidden("donut", "nabucodonosor") == "no"

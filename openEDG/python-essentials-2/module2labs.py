@@ -249,6 +249,7 @@ def hidden(word, combo):
     for char in word:
         if char not in combo:
             return "no"
+        
     firstLetter = combo.index(word[0])
     tail = combo[firstLetter:]
     for char in word:
@@ -256,13 +257,9 @@ def hidden(word, combo):
             tail = tail[tail.index(char):]
         else:
             return "no"
-    return "yes"
-
-
-        
-    return "yes"
-dog = "dog"   
-print(dog[0])
+    return "yes"        
+     
+#print(hidden("dog","vgcxzxduybfdsobywuefas"))
 
 #caesarCypher("The die is cast", 25)
 #caesarCypherInput("Hello")
