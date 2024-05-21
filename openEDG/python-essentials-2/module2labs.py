@@ -277,11 +277,11 @@ reads 9 rows of the Sudoku, each containing 9 digits
 outputs Yes if the Sudoku is valid, and No otherwise.
 """
 def rowIsValid(row):
-    #row is a string of characters containing only digits from '1' to '9'
+    #row should be a string containing only digits from '1' to '9'
     rowList = list(row)
     rowList.sort()
     digitList = [str(x) for x in range(1,10,1)]     
     return rowList == digitList
 
-print(rowIsValid("162973458"))
+
 
