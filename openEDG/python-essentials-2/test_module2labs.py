@@ -8,6 +8,7 @@ from module2labs import paliInput
 from module2labs import paliOrNot
 from module2labs import paliOrNot2
 from module2labs import anagrams
+from module2labs import digit
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -77,4 +78,10 @@ def test_anagrams():
     assert anagrams("   ", " banana") == False
     assert anagrams(" ", " ") == False
 
+@pytest.mark.digit
+def test_digit():
+    assert digit("19991229") == 6
+    assert digit("20000101") == 4 
+    assert digit("19841205") == 3
+    assert digit("19880229") == 3
 
