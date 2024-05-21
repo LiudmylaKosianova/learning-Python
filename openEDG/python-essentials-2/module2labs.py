@@ -289,6 +289,32 @@ def inputIsValid(input):
         return False
     return True
 
+def boardIsSudoku(board):
+    #board is a list of nine strings
+    sudoku = True
+    for row in board:
+        if not lineIsValid(row):
+            return False    
+    
+    for i in range(9):
+        column = ""
+        for j in range(9):
+            column += board[j][i]
+        if not lineIsValid(column):
+            return False
+    
+    miniBoards = []
+    for i in range(9):
+        miniBoard = ""
+        for j in range(3):
+            miniBoard += board[i][i+j]
+
+
+        
+
+
+
+
 
     
 
