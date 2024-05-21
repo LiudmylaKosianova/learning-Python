@@ -276,12 +276,20 @@ reads 9 rows of the Sudoku, each containing 9 digits
 (check carefully if the data entered are valid)
 outputs Yes if the Sudoku is valid, and No otherwise.
 """
-def rowIsValid(row):
-    #row should be a string containing only digits from '1' to '9'
-    rowList = list(row)
+def lineIsValid(line):
+    #line should be sudoku valid
+    rowList = list(line)
     rowList.sort()
     digitList = [str(x) for x in range(1,10,1)]     
     return rowList == digitList
 
+def inputIsValid(input):
+    #input should be a string containing only digits from '1' to '9'
+    if len(input) != 9 or not input.isdigit():
+        return False
+    return True
+
+
+    
 
 

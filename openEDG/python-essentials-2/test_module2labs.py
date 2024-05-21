@@ -10,7 +10,8 @@ from module2labs import paliOrNot2
 from module2labs import anagrams
 from module2labs import digit
 from module2labs import hidden
-from module2labs import rowIsValid
+from module2labs import lineIsValid
+from module2labs import inputIsValid
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -95,9 +96,16 @@ def test_hidden():
     assert hidden("donut", "nabucodonosor") == "no"
 
 @pytest.mark.sudoku
-def test_rowIsValid():
-    assert rowIsValid("198273645") == True
-    assert rowIsValid("123456789") == True
-    assert rowIsValid("111111111") == False
-    assert rowIsValid("1982") == False
-    assert rowIsValid("1de98qlo273645") == False
+def test_lineIsValid():
+    assert lineIsValid("198273645") == True
+    assert lineIsValid("123456789") == True
+    assert lineIsValid("111111111") == False
+    assert lineIsValid("198255544") == False
+    assert lineIsValid("123334566") == False
+
+@pytest.mark.sudoku
+def test_inputIsValid():
+    assert inputIsValid("198273645") == True
+    assert inputIsValid("122338976") == True
+    assert inputIsValid("11a1111bb") == False
+    assert inputIsValid("1982544") == False
