@@ -259,7 +259,29 @@ def hidden(word, combo):
             return "no"
     return "yes"        
      
-#print(hidden("dog","vgcxzxduybfdsobywuefas"))
+"""
+Scenario
+As you probably know, Sudoku is a number-placing puzzle played on a 9x9 board. 
+The player has to fill the board in a very specific way:
 
-#caesarCypher("The die is cast", 25)
-#caesarCypherInput("Hello")
+each row of the board must contain all digits from 0 to 9 (the order doesn't matter)
+each column of the board must contain all digits from 0 to 9 (again, the order doesn't matter)
+each of the nine 3x3 "tiles" (we will name them "sub-squares") 
+of the table must contain all digits from 0 to 9.
+
+
+Your task is to write a program which:
+
+reads 9 rows of the Sudoku, each containing 9 digits 
+(check carefully if the data entered are valid)
+outputs Yes if the Sudoku is valid, and No otherwise.
+"""
+def rowIsValid(row):
+    #row is a string of characters containing only digits from '1' to '9'
+    rowList = list(row)
+    rowList.sort()
+    digitList = [str(x) for x in range(1,10,1)]     
+    return rowList == digitList
+
+print(rowIsValid("162973458"))
+
