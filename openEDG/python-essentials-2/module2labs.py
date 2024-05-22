@@ -304,12 +304,56 @@ def boardIsSudoku(board):
             return False
     
     miniBoards = []
+    miniBoard = ""
+    count = 0
     for i in range(9):
-        miniBoard = ""
         for j in range(3):
-            miniBoard += board[i][i+j]
+            miniBoard += board[i][j]
+            count += 1
+            if count == 9:
+                miniBoards.append(miniBoard)
+                count = 0
+                miniBoard = ""
+
+    miniBoard = ""
+    count = 0
+    for i in range(9):
+        for j in range(3,6,1):
+            miniBoard += board[i][j]
+            count += 1
+            if count == 9:
+                miniBoards.append(miniBoard)
+                count = 0
+                miniBoard = ""
+    miniBoard = ""
+    count = 0
+    for i in range(9):
+        for j in range(6,9,1):
+            miniBoard += board[i][j]
+            count += 1
+            if count == 9:
+                miniBoards.append(miniBoard)
+                count = 0
+                miniBoard = ""
+    
+    for line in miniBoards:
+        if not lineIsValid(line):
+            return False
+    return True
+    
+print(boardIsSudoku(["295743861",
+                          "431865927", 
+                          "876192543", 
+                          "387459216",
+                          "612387495",
+                          "549216738",
+                          "763524189",
+                          "928671354",
+                          "154938672"]))
+    
 
 
+ 
         
 
 

@@ -12,6 +12,7 @@ from module2labs import digit
 from module2labs import hidden
 from module2labs import lineIsValid
 from module2labs import inputIsValid
+from module2labs import boardIsSudoku
 
 @pytest.mark.lab1
 def test_mysplit():
@@ -109,3 +110,24 @@ def test_inputIsValid():
     assert inputIsValid("122338976") == True
     assert inputIsValid("11a1111bb") == False
     assert inputIsValid("1982544") == False
+
+@pytest.mark.sudoku
+def test_boardIsSudoku():
+    assert boardIsSudoku(["295743861",
+                          "431865927", 
+                          "876192543", 
+                          "387459216",
+                          "612387495",
+                          "549216738",
+                          "763524189",
+                          "928671354",
+                          "154938672"]) == True
+    assert boardIsSudoku(["295743861",
+                          "431865927", 
+                          "876192543", 
+                          "387459256",
+                          "612387495",
+                          "549216738",
+                          "763524189",
+                          "928671354",
+                          "154938672"]) == False
