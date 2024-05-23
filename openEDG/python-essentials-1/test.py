@@ -18,8 +18,20 @@
 #     terracota[3] = 0
 # print(terracota(terracota))
  
-x = 3
-y = 2
-wow = x%y
-print(1%2)
+# x = 3
+# y = 2
+# wow = x%y
+# print(1%2)
+# myL = [1,2]
+# for i in range(2):
+#     print(myL[i])
+#     print(myL[-1])
+#     print("***")
+#     myL.insert(-1, myL[i])
+# print(myL)
+import platform
+print(platform.version())
+
+
+
     
