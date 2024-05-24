@@ -381,7 +381,7 @@ def read_int(prompt, min, max):
         except ValueError:
             print("Wrong input")
         except:
-            print(f"the value is not within permitted range ({min}..{max})")
+            print(f"The value is not within permitted range ({min}..{max})")
 
 v = read_int("Enter a number from -10 to 10: ", -10, 10)
 
