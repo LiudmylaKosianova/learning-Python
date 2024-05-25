@@ -1,3 +1,11 @@
+"""
+Your task is to implement the Queue class with two basic operations:
+
+put(element), which puts an element at end of the queue;
+get(), which takes an element from the front of the queue and returns it as the result 
+(the queue cannot be empty to successfully perform it.)
+"""
+
 class QueueError(LookupError):  # Choose base class for the new exception.
     def __init__(self):
         LookupError.__init__(self)
