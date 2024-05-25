@@ -1,24 +1,23 @@
-class QueueError(???):  # Choose base class for the new exception.
-    #
-    #  Write code here
-    #
+class QueueError(LookupError):  # Choose base class for the new exception.
+    def __init__(self):
+        LookupError.__init__(self)
 
 
 class Queue:
     def __init__(self):
-        #
-        # Write code here
-        #
+        self.__list = []
 
     def put(self, elem):
-        #
-        # Write code here
-        #
+        self.__list.insert(0, elem)
 
     def get(self):
-        #
-        # Write code here
-        #
+        try:
+            element = self.__list[-1]
+            del self.__list[-1]
+            return element
+        except:
+            raise QueueError
+        
 
 
 que = Queue()
