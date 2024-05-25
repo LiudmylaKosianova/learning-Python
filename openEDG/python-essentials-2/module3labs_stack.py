@@ -8,9 +8,11 @@ Use the Stack class we've provided in the editor.
 class Stack:
     def __init__(self):
         self.__stk = []
+        
 
     def push(self, val):
         self.__stk.append(val)
+        
 
     def pop(self):
         val = self.__stk[-1]
@@ -20,16 +22,22 @@ class Stack:
 
 class CountingStack(Stack):
     def __init__(self):
+        Stack.__init__(self)
+        self.__counter = 0
     #
     # Fill the constructor with appropriate actions.
-    #
+    
+
 
     def get_counter(self):
+        return self.__counter
     #
     # Present the counter's current value to the world.
     #
 
     def pop(self):
+        Stack.pop(self)
+        self.__counter += 1
     #
     # Do pop and update the counter.
     #
