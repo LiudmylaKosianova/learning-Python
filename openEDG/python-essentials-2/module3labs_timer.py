@@ -36,11 +36,15 @@ class Timer:
          
     def next_second(self):
         if self.__s == 59:
-            print("next hour")
-            setattr(self, "__s", self.__s + 1)
-        #
-        # Write code here
-        #
+            setattr(self, "_Timer__s", 0)      
+            setattr(self, "_Timer__m", self.__m + 1)
+            if self.__m == 60:
+                setattr(self, "_Timer__m", 0)
+                setattr(self, "_Timer__h", self.__h + 1)
+                if self.__h == 24:
+                    setattr(self, "_Timer__h", 0)
+        else:
+            setattr(self, "_Timer__s", self.__s + 1) 
 
     # def prev_second(self):
     #     #
@@ -48,9 +52,9 @@ class Timer:
     #     #
 
 
-timer = Timer(23,59,59)
+timer = Timer(22,58,59)
 print(timer)
-# timer.next_second()
-# print(timer)
+timer.next_second()
+print(timer)
 # timer.prev_second()
 # print(timer)
