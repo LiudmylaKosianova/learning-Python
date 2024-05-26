@@ -46,15 +46,25 @@ class Timer:
         else:
             setattr(self, "_Timer__s", self.__s + 1) 
 
-    # def prev_second(self):
-    #     #
-    #     # Write code here
-    #     #
+    def prev_second(self):
+        if self.__s == 0:
+            setattr(self, "_Timer__s", 59)      
+            setattr(self, "_Timer__m", self.__m - 1)
+            if self.__m == -1:
+                setattr(self, "_Timer__m", 59)
+                setattr(self, "_Timer__h", self.__h - 1)
+                if self.__h == -1:
+                    setattr(self, "_Timer__h", 23)
+        else:
+            setattr(self, "_Timer__s", self.__s - 1) 
+        #
+        # Write code here
+        #
 
 
-timer = Timer(22,58,59)
+timer = Timer(23,59,59)
 print(timer)
 timer.next_second()
 print(timer)
-# timer.prev_second()
-# print(timer)
+timer.prev_second()
+print(timer)
