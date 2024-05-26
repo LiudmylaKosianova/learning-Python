@@ -19,30 +19,30 @@ next_second() and previous_second(),
 incrementing the time stored inside objects by +1/-1 second respectively.
 """
 class Timer:
-    def __init__( ??? ):
-        #
-        # Write code here
-        #
+    def __init__(self,h,m,s):
+        self.__h = h
+        self.__m = m
+        self.__s = s
+        
 
     def __str__(self):
-        #
-        # Write code here
-        #
+        currentTime =f"{self.__h}:{self.__m}:{self.__s}"
+        return currentTime
+         
+    # def next_second(self):
+    #     #
+    #     # Write code here
+    #     #
 
-    def next_second(self):
-        #
-        # Write code here
-        #
-
-    def prev_second(self):
-        #
-        # Write code here
-        #
+    # def prev_second(self):
+    #     #
+    #     # Write code here
+    #     #
 
 
 timer = Timer(23, 59, 59)
 print(timer)
-timer.next_second()
-print(timer)
-timer.prev_second()
-print(timer)
+# timer.next_second()
+# print(timer)
+# timer.prev_second()
+# print(timer)
