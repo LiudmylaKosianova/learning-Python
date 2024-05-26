@@ -162,3 +162,73 @@ print(Classy.__name__)
 obj = Classy()
 print(type(obj).__name__)
 
+"""
+As you know, any module named __main__ is actually not a module, 
+but the file currently being run.
+"""
+
+class Classy:
+    pass
+
+
+print(Classy.__module__)
+obj = Classy()
+print(obj.__module__)
+
+
+"""
+__dict__ is a dictionary. 
+
+Another built-in property worth mentioning is __name__, which is a string.
+
+The property contains the name of the class. It's nothing exciting, just a string.
+Note: the __name__ attribute is absent from the object - it exists only inside classes.
+"""
+
+class Classy:
+    pass
+
+
+print(Classy.__name__)
+obj = Classy()
+print(type(obj).__name__)
+
+"""
+__bases__ is a tuple. T
+he tuple contains classes (not class names) which are direct superclasses for the class.
+
+The order is the same as that used inside the class definition.
+
+Note: a class without explicit superclasses points to object (a predefined Python class) 
+as its direct ancestor.
+"""
+class SuperOne:
+    pass
+
+
+class SuperTwo:
+    pass
+
+
+class Sub(SuperOne, SuperTwo):
+    pass
+
+
+def printBases(cls):
+    print('( ', end='')
+
+    for x in cls.__bases__:
+        print(x.__name__, end=' ')
+    print(')')
+
+
+printBases(SuperOne)
+printBases(SuperTwo)
+printBases(Sub)
+
+"""
+introspection, which is the ability of a program to examine the type or properties of an object at runtime;
+reflection, which goes a step further, and is the ability of a program to manipulate the values, properties and/or functions of an object at runtime.
+"""
+
+
